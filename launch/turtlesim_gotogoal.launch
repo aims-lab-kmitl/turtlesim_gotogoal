@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+
+    <node name="turtlesim_node" pkg="turtlesim" type="turtlesim_node"/>
+
+    <node name="turtlesim_gotogoal_node" pkg="turtlesim_gotogoal" type="turtlesim_gotogoal.py" output="screen"/>
+
+</launch>
