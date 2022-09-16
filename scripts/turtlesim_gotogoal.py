@@ -48,16 +48,36 @@ def main():
     tuetle_pose_sub = rospy.Subscriber('/turtle1/pose', Pose, commandPostitionCallback)
 
     while not rospy.is_shutdown():
-
-        gotox = float(input("Set your x goal:"))
-        gotoy = float(input("Set your y goal:"))
-        gotogoal(gotox, gotoy)
-
+        time.sleep(3)
+        gotogoal(5, 5)
         cmd_vel_pub.publish(cmd_vel_angular_)
+        time.sleep(2)
+        cmd_vel_pub.publish(cmd_vel_linear_)
         time.sleep(3)
 
+        gotogoal(9, 5)
+        cmd_vel_pub.publish(cmd_vel_angular_)
+        time.sleep(2)
         cmd_vel_pub.publish(cmd_vel_linear_)
-        print("REACHED THE DESTINATION x = %f, y = %f" % (gotox,gotoy))
+        time.sleep(3)
+
+        gotogoal(6.5, 9.6)
+        cmd_vel_pub.publish(cmd_vel_angular_)
+        time.sleep(2)
+        cmd_vel_pub.publish(cmd_vel_linear_)
+        time.sleep(3)
+
+        gotogoal(1.7, 8.5)
+        cmd_vel_pub.publish(cmd_vel_angular_)
+        time.sleep(2)
+        cmd_vel_pub.publish(cmd_vel_linear_)
+        time.sleep(3)
+
+        gotogoal(5, 5)
+        cmd_vel_pub.publish(cmd_vel_angular_)
+        time.sleep(2)
+        cmd_vel_pub.publish(cmd_vel_linear_)
+        time.sleep(3)
         rate.sleep()
 
 
